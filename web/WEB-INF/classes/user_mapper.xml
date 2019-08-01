@@ -1,0 +1,23 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test">
+    <select id="selectUser" parameterType="int" resultType="com.rony.po.User">
+ select * from user where id = #{id}
+    </select>
+    <select id="selectByName" parameterType="java.lang.String" resultType="com.rony.po.User">
+        select  * from user where name like '%${value}%'
+    </select>
+    <insert id="insertUser" parameterType="com.rony.po.User" >
+        <selectKey keyProperty="id" order="AFTER" resultType="int">
+            select LAST_INSERT_ID()
+         </selectKey>
+        insert into  user(name,age,pwd) value (#{name},#{age},#{pwd});
+    </insert>
+    <update id="updateUser" parameterType="com.rony.po.User">
+        update user set name=#{name} where id=#{id}
+    </update>
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
+</mapper>
