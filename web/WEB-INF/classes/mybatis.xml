@@ -3,17 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
+    <properties resource="mybatis.properties"></properties>
     <settings>
         <setting name="logImpl" value="LOG4J"/>
     </settings>
 
     <objectFactory type="com.rony.test.ObjectFactory" ></objectFactory>
-    <plugins>
-        <plugin interceptor="com.rony.test.myPlugin">
-            <property name="someProperty" value="100"/>
-        </plugin>
-    </plugins>
+
     <!--typeAliases配置包的别名-->
     <!--<typeAliases>-->
     <!--<package name=""-->
@@ -33,6 +29,8 @@
             </dataSource>
         </environment>
     </environments>
+
+
 
     <!--配置一个SQL语句和映射的配置文件-->
     <mappers>

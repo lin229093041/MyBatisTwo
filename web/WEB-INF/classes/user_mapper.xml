@@ -20,4 +20,14 @@
     <delete id="deleteUser" parameterType="int">
         delete from user where id=#{id}
     </delete>
+    <select id="QueryUser" parameterType="com.rony.test.UserQueryInfo" resultType="com.rony.po.User">
+        select * from user where id=#{u.id}
+    </select>
+    <select id="selectRename" resultMap="useResultMap">
+        select id _myid ,name _myname from  user;
+    </select>
+    <resultMap id="useResultMap" type="com.rony.po.User">
+        <id column="_myid" property="id"></id>
+        <result column="_myname" property="name"></result>
+    </resultMap>
 </mapper>
