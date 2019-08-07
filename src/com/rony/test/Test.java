@@ -28,7 +28,7 @@ public class Test {
 //        List list=session.selectList("test.QueryUser",2);
 //        System.out.println(list);
 //        session.selectM
-        List<Object> list = session.selectList("test.selectRename");
+        List<Object> list = session.selectList("course_test.findCourse");
         System.out.println(list);
     }
 

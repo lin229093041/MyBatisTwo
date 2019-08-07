@@ -35,6 +35,7 @@
     <!--配置一个SQL语句和映射的配置文件-->
     <mappers>
         <mapper resource="user_mapper.xml" />
+        <mapper resource="course_mapper.xml"/>
     </mappers>
 
 </configuration>
