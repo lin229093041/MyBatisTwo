@@ -27,6 +27,7 @@ public class Teacher {
     }
 
     public void setName(String name) {
+        System.out.println("set方法");
         this.name = name;
     }
 

@@ -1,0 +1,14 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rony.dao.user_interface_mapper">
+    <select id="findUserByID" parameterType="int" resultType="com.rony.po.UserInterFace">
+        select * from user where id=#{id};
+    </select>
+    <delete id="deleteByID" parameterType="int">
+        delete from user where id=#{id};
+    </delete>
+    <insert id="addUser" parameterType="com.rony.po.UserInterFace">
+        insert into user values (id,passWorl,role);
+    </insert>
+</mapper>

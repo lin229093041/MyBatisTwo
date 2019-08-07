@@ -28,4 +28,16 @@
             <result column="classRoom" property="classRoom"></result>
         </collection>
     </resultMap>
+    <select id="findC"   resultMap="LazyLoadingResult">
+        select * from course;
+    </select>
+    <resultMap id="LazyLoadingResult" type="com.rony.po.Course_Teacher_Field">
+        <result column="courseName" property="courseName"></result>
+        <result column="teacherID" property="teacherID"></result>
+        <association property="t" javaType="com.rony.po.Teacher" select="findTeacherByID" column="teacherID">
+        </association>
+    </resultMap>
+    <select id="findTeacherByID" parameterType="int" resultType="com.rony.po.Teacher">
+        select * from teacher where id=#{id};
+    </select>
 </mapper>
