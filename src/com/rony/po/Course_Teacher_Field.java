@@ -1,6 +1,8 @@
 package com.rony.po;
 
-public class Course_Teacher_Field extends Course{
+import java.io.Serializable;
+
+public class Course_Teacher_Field extends Course implements Serializable {
     private Teacher t;
 
     public Course_Teacher_Field() {

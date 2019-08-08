@@ -2,6 +2,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="course_test">
+    <cache/>
     <select id="findCourse" resultMap="teacher_C">
     select * from course c,teacher  t where c.teacherID=t.id
     </select>

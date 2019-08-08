@@ -11,4 +11,5 @@
     <insert id="addUser" parameterType="com.rony.po.UserInterFace">
         insert into user values (id,passWorl,role);
     </insert>
+    <cache/>
 </mapper>
